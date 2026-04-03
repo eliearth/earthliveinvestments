@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B1120;
+  --bg-card: #0A1F44;
+  --bg-deep: #060D1A;
+  --foreground: #FFFFFF;
+  --gold: #C9A84C;
+  --gold-light: #E2C47A;
+  --gold-dim: #8A6B2E;
+  --gold-glow: rgba(201, 168, 76, 0.18);
+  --gold-border: rgba(201, 168, 76, 0.3);
+  --text-muted: rgba(255, 255, 255, 0.45);
+  --border: rgba(255, 255, 255, 0.07);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-bg-card: var(--bg-card);
+  --color-bg-deep: var(--bg-deep);
+  --color-foreground: var(--foreground);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dim: var(--gold-dim);
+  --color-gold-glow: var(--gold-glow);
+  --color-gold-border: var(--gold-border);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  
+  --font-sans: var(--font-montserrat);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 4px; }
