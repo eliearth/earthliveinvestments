@@ -5,10 +5,14 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const SLIDES = [
-  { id: 1, src: "https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2672&auto=format&fit=crop", title: "Residencial San Salvador" },
-  { id: 2, src: "https://images.unsplash.com/photo-1588612140510-740702cae1b0?q=80&w=2670&auto=format&fit=crop", title: "Planta Comercial Santa Tecla" },
-  { id: 3, src: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2672&auto=format&fit=crop", title: "Sistema Industrial" },
-  { id: 4, src: "https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2679&auto=format&fit=crop", title: "Carga de Vehículos Eléctricos" }
+  { id: 1, src: "/projects/project-1.jpg", title: "Instalación Residencial" },
+  { id: 2, src: "/projects/project-2.jpg", title: "Sistema Industrial" },
+  { id: 3, src: "/projects/project-3.jpg", title: "Infraestructura Solar" },
+  { id: 4, src: "/projects/project-4.jpg", title: "Gestión Energética" },
+  { id: 5, src: "/projects/project-5.jpg", title: "Pliegues Solares" },
+  { id: 6, src: "/projects/project-6.jpg", title: "Proyecto Corporativo" },
+  { id: 7, src: "/projects/project-7.jpg", title: "Instalación Premium" },
+  { id: 8, src: "/projects/project-8.jpg", title: "Sistema de Respaldo" }
 ];
 
 export function PortfolioCarousel() {

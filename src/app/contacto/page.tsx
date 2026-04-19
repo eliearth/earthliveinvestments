@@ -58,7 +58,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-xs uppercase tracking-widest text-white/50 mb-2">Llamada Directa</h3>
-                  <p className="text-base font-bold text-white tracking-widest">+503 2222-2222</p>
+                  <p className="text-base font-bold text-white tracking-widest">+1 301 741 2861</p>
                 </div>
               </div>
 
@@ -68,7 +68,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-xs uppercase tracking-widest text-white/50 mb-2">Consultas</h3>
-                  <p className="text-base font-bold text-white tracking-widest">info@earthliveinvest.com</p>
+                  <p className="text-base font-bold text-white tracking-widest">eli@earthliveinvest.com</p>
                 </div>
               </div>
 
@@ -78,7 +78,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h3 className="font-black text-xs uppercase tracking-widest text-white/50 mb-2">Centro Regional</h3>
-                  <p className="text-base font-bold text-white tracking-widest leading-relaxed">San Salvador, <br/> El Salvador</p>
+                  <p className="text-base font-bold text-white tracking-widest leading-relaxed">21 Avenida Norte, colonia Layco #1634 <br/> San Salvador</p>
                 </div>
               </div>
             </div>

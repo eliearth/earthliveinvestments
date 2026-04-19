@@ -75,15 +75,15 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="text-gold w-4 h-4 shrink-0" />
-                <span className="text-[0.8rem] font-bold">San Salvador, El Salvador</span>
+                <span className="text-[0.8rem] font-bold">21 Avenida Norte, colonia Layco #1634 San Salvador</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="text-gold w-4 h-4 shrink-0" />
-                <span className="text-[0.8rem] font-bold">+503 2222-2222</span>
+                <span className="text-[0.8rem] font-bold">+1 301 741 2861</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="text-gold w-4 h-4 shrink-0" />
-                <span className="text-[0.8rem] font-bold">info@earthliveinvest.com</span>
+                <span className="text-[0.8rem] font-bold">eli@earthliveinvest.com</span>
               </li>
             </ul>
           </div>
