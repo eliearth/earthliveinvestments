@@ -31,16 +31,16 @@ export default function Home() {
       global_desc: "Diversificación en mercados emergentes y estables, asegurando resiliencia y un alcance global sin precedentes.",
       global_metric: "Naciones Activas",
       global_metric_val: "12 Países",
-      platform_tag: "Intelligence Platform",
-      platform_title: <>Total Transparencia <br/> En Tu Bolsillo</>,
-      platform_desc: "Monitorea la producción de energía, rastrea valuaciones inmobiliarias y gestiona tus dividendos con herramientas de grado institucional.",
+      platform_tag: "Monitoreo en Tiempo Real",
+      platform_title: <>Producción Solar <br/> En Tu Bolsillo</>,
+      platform_desc: "Toma el control absoluto de tu energía. Visualiza la generación de tus paneles en tiempo real, accede a reportes históricos y mantén la tranquilidad con el respaldo de garantías de fabricantes líderes en la industria.",
       platform_features: [
-        "Monitoreo de producción en tiempo real",
-        "Reportes detallados de impacto ambiental",
-        "Gestión de dividendos trimestrales",
-        "Soporte prioritario 24/7"
+        "Seguimiento de producción diaria, semanal, mensual y anual",
+        "Garantía de fabricante de 25 años en microinversores inteligentes",
+        "Garantía de rendimiento de producción lineal de 25 años en paneles",
+        "Monitoreo constante con detección automática de fallas"
       ],
-      btn_join: "Unirse a la Red",
+      btn_join: "Monitorear Mi Sistema",
       cta_title: <>Patrimonio mediante <br/> <span className="text-gold">precisión energética.</span></>,
       cta_desc: "El verdadero costo no es la inversión solar; es seguir pagando altas tarifas de por vida. Toma el control hoy.",
       btn_proposal: "Obtén tu Propuesta Institucional"
@@ -67,16 +67,16 @@ export default function Home() {
       global_desc: "Diversification across emerging and stable markets, ensuring resilience and unprecedented global reach.",
       global_metric: "Active Nations",
       global_metric_val: "12 Countries",
-      platform_tag: "Intelligence Platform",
-      platform_title: <>Total Transparency <br/> In Your Pocket</>,
-      platform_desc: "Monitor energy production, track real estate valuations, and manage dividends with institutional-grade tools.",
+      platform_tag: "Real-time Monitoring",
+      platform_title: <>Solar Production <br/> In Your Pocket</>,
+      platform_desc: "Take absolute control of your energy. View your solar generation instantly, access historical production reports, and enjoy peace of mind backed by industry-leading manufacturer warranties.",
       platform_features: [
-        "Real-time production monitoring",
-        "Detailed environmental impact reports",
-        "Quarterly dividend management",
-        "Priority 24/7 client support"
+        "Daily, weekly, monthly, and yearly production tracking",
+        "25-Year manufacturer warranty on smart microinverters",
+        "25-Year linear power production warranty on panels",
+        "Continuous system monitoring with automated fault detection"
       ],
-      btn_join: "Join the Network",
+      btn_join: "Monitor My System",
       cta_title: <>Wealth through <br/> <span className="text-gold">precision energy.</span></>,
       cta_desc: "The real cost is not solar investment; it is continuing to pay high utility rates for life. Take control today.",
       btn_proposal: "Get Your Institutional Proposal"
@@ -231,47 +231,92 @@ export default function Home() {
       {/* Dashboard Preview Section */}
       <section className="py-28 bg-bg-card border-y border-white/5 px-6 sm:px-12" id="performance">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center pl-4">
-          <div className="bg-background rounded-3xl border border-gold-border p-8 shadow-[0_40px_80px_rgba(0,0,0,0.5)] order-2 lg:order-1">
-            <div className="flex justify-between items-center mb-8">
-              <div className="flex items-center gap-3">
-                <div className="p-2 bg-gold-glow border border-gold-border rounded-lg text-gold">
-                  <ShieldCheck size={20} />
-                </div>
-                <span className="text-sm font-bold">Portfolio Intelligence</span>
+          {/* Cellphone Mockup with Solar App */}
+          <div className="order-2 lg:order-1 flex justify-center">
+            <div className="w-[300px] h-[600px] bg-background rounded-[3rem] border-[8px] border-[#1e2d4a] relative shadow-[0_25px_60px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden text-white font-sans">
+              {/* Speaker / Notch */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-[#1e2d4a] rounded-b-2xl flex items-center justify-center z-20">
+                <div className="w-12 h-1 bg-black/40 rounded-full" />
               </div>
-              <div className="flex gap-1.5">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              <div className="p-4 bg-gold-glow/20 border border-gold-border rounded-xl">
-                <div className="text-[0.55rem] font-bold text-text-muted uppercase tracking-widest mb-2">Total Value</div>
-                <div className="text-lg font-black text-gold">$1,240,500</div>
-              </div>
-              <div className="p-4 bg-gold-glow/20 border border-gold-border rounded-xl">
-                <div className="text-[0.55rem] font-bold text-text-muted uppercase tracking-widest mb-2">Generation</div>
-                <div className="text-lg font-black text-gold">14,250 MWh</div>
-              </div>
-            </div>
-            <div className="space-y-3">
-              {[
-                { name: "Helios Array 01", val: "$450K", gain: "+12.4%" },
-                { name: "Aurora Lofts", val: "$320K", gain: "+8.2%" },
-                { name: "Global ESG Fund", val: "$140K", gain: "+5.5%" },
-              ].map((row, i) => (
-                <div key={i} className="flex justify-between items-center p-4 rounded-xl hover:bg-white/5 border border-transparent hover:border-white/5 transition-all">
-                  <div className="flex items-center gap-3">
-                    <div className="w-2 h-2 rounded-full bg-gold" />
-                    <span className="text-sm font-bold">{row.name}</span>
+              
+              {/* Screen Content */}
+              <div className="flex-1 flex flex-col justify-between pt-10 p-5 relative bg-[#09101f]">
+                {/* App Header */}
+                <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                  <div>
+                    <span className="text-[0.55rem] font-bold text-text-muted uppercase tracking-widest block">System Status</span>
+                    <div className="flex items-center gap-1.5 mt-0.5">
+                      <div className="w-2 h-2 rounded-full bg-green-400 animate-ping" />
+                      <span className="text-xs font-black text-white uppercase tracking-wider">ACTIVE</span>
+                    </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-sm font-bold">{row.val}</div>
-                    <div className="text-[0.65rem] font-bold text-green-400">{row.gain}</div>
+                    <span className="text-[0.65rem] font-black text-gold uppercase tracking-wider">EARTH LIVE</span>
                   </div>
                 </div>
-              ))}
+
+                {/* Energy Chart Tab Control */}
+                <div className="my-4">
+                  <div className="flex justify-between bg-bg-card/50 border border-white/5 p-1 rounded-xl text-[0.6rem] font-black uppercase text-center">
+                    <span className="w-1/4 py-1 text-white/45">D</span>
+                    <span className="w-1/4 py-1 text-white/45">W</span>
+                    <span className="w-1/4 py-1 bg-gold text-background rounded-lg shadow-sm font-extrabold">M</span>
+                    <span className="w-1/4 py-1 text-white/45">Y</span>
+                  </div>
+                </div>
+
+                {/* Production Curve SVG */}
+                <div className="flex-1 bg-bg-card/30 border border-white/5 rounded-2xl p-4 flex flex-col justify-between mb-4 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(201,168,76,0.05)_0%,_transparent_75%)] pointer-events-none" />
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <span className="text-[0.55rem] font-bold text-text-muted uppercase tracking-widest block">{language === "en" ? "Monthly Production" : "Producción Mensual"}</span>
+                      <span className="text-xl font-black text-white tracking-tight">1.18 MWh</span>
+                    </div>
+                    <span className="text-[0.6rem] font-bold text-green-400 bg-green-400/10 px-2 py-0.5 rounded-full">▲ +4.2%</span>
+                  </div>
+                  
+                  {/* SVG Bar/Line graph representing daily/weekly/monthly/yearly curve */}
+                  <div className="h-[120px] w-full flex items-end justify-between mt-3 px-1">
+                    {[35, 45, 30, 60, 50, 75, 90, 85, 65, 80, 95, 70].map((val, i) => (
+                      <div key={i} className="flex flex-col items-center w-1.5 gap-1.5 h-full justify-end">
+                        <div 
+                          style={{ height: `${val}%` }} 
+                          className={`w-full rounded-t-full transition-all duration-1000 ${
+                            i === 10 
+                              ? 'bg-gradient-to-t from-gold-dim via-gold to-gold-light shadow-[0_0_8px_rgba(201,168,76,0.5)]' 
+                              : 'bg-white/10'
+                          }`}
+                        />
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-between text-[0.45rem] font-bold text-text-muted mt-2 uppercase tracking-widest border-t border-white/5 pt-2">
+                    <span>Jan</span>
+                    <span>Jun</span>
+                    <span>Dec</span>
+                  </div>
+                </div>
+
+                {/* Microinverters & Panel Stats */}
+                <div className="grid grid-cols-2 gap-3 mb-2">
+                  <div className="p-3 bg-bg-card/45 border border-white/5 rounded-xl">
+                    <span className="text-[0.5rem] font-bold text-white/40 uppercase tracking-widest block">{language === "en" ? "Current Power" : "Potencia Actual"}</span>
+                    <span className="text-sm font-black text-gold">8.4 kW</span>
+                  </div>
+                  <div className="p-3 bg-bg-card/45 border border-white/5 rounded-xl">
+                    <span className="text-[0.5rem] font-bold text-white/40 uppercase tracking-widest block">{language === "en" ? "Lifetime Yield" : "Rendimiento Total"}</span>
+                    <span className="text-sm font-black text-gold">24.5 MWh</span>
+                  </div>
+                </div>
+
+                {/* Warranty Summary Footer inside Screen */}
+                <div className="p-3 bg-gold-glow/20 border border-gold-border/30 rounded-xl flex items-center justify-between text-[0.55rem] font-extrabold uppercase tracking-widest">
+                  <span className="text-white/60">{language === "en" ? "Inverter Warranty" : "Garantía de Inversor"}</span>
+                  <span className="text-gold">25 {language === "en" ? "Years" : "Años"}</span>
+                </div>
+              </div>
             </div>
           </div>
 

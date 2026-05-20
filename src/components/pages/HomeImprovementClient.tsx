@@ -375,6 +375,123 @@ export function HomeImprovementClient() {
           </div>
         </section>
 
+        {/* Project Types We Support (Showcase Grid) */}
+        <section className="mb-24">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <div className="section-tag inline-flex items-center gap-4 text-gold text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-4 before:content-[''] before:w-10 before:h-[1px] before:bg-gold">
+              {language === "en" ? "Real Proof of Work" : "Evidencia Real de Trabajo"}
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight italic mb-4">
+              {language === "en" ? "Project Types We Support" : "Tipos de Proyectos que Apoyamos"}
+            </h2>
+            <p className="text-text-muted font-semibold text-sm leading-relaxed">
+              {language === "en"
+                ? "Explore the high-durability roofing, structural upgrades, and exterior improvements we coordinate for residential and commercial assets in Maryland, Washington D.C., and Virginia."
+                : "Explora los proyectos de techado de alta durabilidad, mejoras estructurales y acabados exteriores que coordinamos para propiedades residenciales y comerciales en Maryland, Washington D.C. y Virginia."
+              }
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                id: "roofing",
+                title: { en: "Flat Roofing Systems", es: "Sistemas de Techo Plano" },
+                desc: {
+                  en: "Complete low-slope and flat roofing project management with premium weatherproofing membranes.",
+                  es: "Gestión completa de proyectos de techos planos y de baja pendiente con membranas impermeabilizantes de primera calidad."
+                },
+                location: { en: "MD | D.C. | VA", es: "MD | D.C. | VA" },
+                image: "/portfolio/earth-live-flat-roofing-finished.webp",
+                tag: { en: "Roofing", es: "Techado" }
+              },
+              {
+                id: "bath-remodel",
+                title: { en: "Modern Bath Remodeling", es: "Remodelación de Baño" },
+                desc: {
+                  en: "Full bathroom remodeling coordination including luxury walk-in showers and premium tile layouts.",
+                  es: "Coordinación completa de remodelación de baños, incluyendo duchas de lujo y distribución de azulejos premium."
+                },
+                location: { en: "MD | D.C. | VA", es: "MD | D.C. | VA" },
+                image: "/portfolio/earth-live-bathroom-remodel-modern.webp",
+                tag: { en: "Remodeling", es: "Remodelación" }
+              },
+              {
+                id: "bath-vanity",
+                title: { en: "LED Mirrors & Custom Vanities", es: "Espejos LED y Tocadores" },
+                desc: {
+                  en: "High-end bathroom detailing featuring backlit LED touch mirrors and contemporary fixtures.",
+                  es: "Detalles de baño de alta gama con espejos LED táctiles retroiluminados y grifería contemporánea."
+                },
+                location: { en: "MD | D.C. | VA", es: "MD | D.C. | VA" },
+                image: "/portfolio/earth-live-bathroom-vanity-led-mirror.webp",
+                tag: { en: "Remodeling", es: "Remodelación" }
+              },
+              {
+                id: "deck",
+                title: { en: "Deck Construction", es: "Construcción de Terrazas" },
+                desc: {
+                  en: "Residential wooden deck framing, structural supports, and exterior siding coordination.",
+                  es: "Coordinación de estructuras de terraza de madera, soportes estructurales y revestimiento exterior residencial."
+                },
+                location: { en: "MD | D.C. | VA", es: "MD | D.C. | VA" },
+                image: "/portfolio/earth-live-deck-construction.webp",
+                tag: { en: "Exterior Upgrades", es: "Exteriores" }
+              },
+              {
+                id: "commercial-paint",
+                title: { en: "Commercial Exterior Painting", es: "Pintura Exterior Comercial" },
+                desc: {
+                  en: "Coordinating commercial metal flashing prep, exterior brick coating, and structural painting.",
+                  es: "Coordinación de preparación de tapajuntas metálicos comerciales, revestimiento de ladrillo exterior y pintura estructural."
+                },
+                location: { en: "MD | D.C. | VA", es: "MD | D.C. | VA" },
+                image: "/portfolio/earth-live-commercial-exterior-painting.webp",
+                tag: { en: "Commercial", es: "Comercial" }
+              }
+            ].map((proj) => (
+              <div 
+                key={proj.id} 
+                className="group rounded-[2rem] bg-bg-card border border-white/5 overflow-hidden hover:border-gold-border transition-all duration-300 flex flex-col"
+              >
+                <div className="relative h-[240px] overflow-hidden">
+                  <img 
+                    src={proj.image} 
+                    alt={proj.title[language]} 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80"
+                    loading="lazy"
+                  />
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="bg-gold/90 text-background px-3 py-1 rounded-full text-[0.6rem] font-black uppercase tracking-wider">
+                      {proj.tag[language]}
+                    </span>
+                    <span className="bg-background/90 border border-gold-border text-gold px-3 py-1 rounded-full text-[0.6rem] font-bold uppercase tracking-wider">
+                      {proj.location[language]}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-lg font-black text-white uppercase mb-2 tracking-tight">
+                      {proj.title[language]}
+                    </h3>
+                    <p className="text-text-muted text-xs leading-relaxed font-semibold mb-6">
+                      {proj.desc[language]}
+                    </p>
+                  </div>
+                  <Link 
+                    href={`/contacto?service=${proj.id === 'commercial-paint' ? 'consulta_general' : 'roofing_md'}`}
+                    className="inline-flex items-center gap-2 text-xs font-black uppercase text-gold hover:text-white transition-colors mt-auto group/link"
+                  >
+                    {language === "en" ? "Inquire About Project" : "Consultar sobre Proyecto"}
+                    <ArrowRight size={12} className="group-hover/link:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Service Areas Section */}
         <section id="service-areas" className="mb-24">
           <div className="text-center max-w-2xl mx-auto mb-16">

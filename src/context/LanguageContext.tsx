@@ -15,6 +15,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>("es");
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const urlLang = params.get("lang");
+      if (urlLang === "en" || urlLang === "es") {
+        setLanguageState(urlLang);
+        localStorage.setItem("language_preference", urlLang);
+        return;
+      }
+    }
+
     const savedLang = localStorage.getItem("language_preference") as Language;
     if (savedLang === "en" || savedLang === "es") {
       // eslint-disable-next-line react-hooks/set-state-in-effect

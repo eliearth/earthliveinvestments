@@ -434,6 +434,46 @@ export function SolarClient() {
           </div>
         </section>
 
+        {/* Project Spotlight */}
+        <section className="mb-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center bg-bg-card border border-white/5 rounded-[2.5rem] overflow-hidden p-8 sm:p-12">
+            <div className="relative rounded-[2rem] overflow-hidden border border-white/10 aspect-video lg:aspect-auto lg:h-[400px]">
+              <img 
+                src="/portfolio/earth-live-solar-residential-dmv.webp" 
+                alt={language === "en" ? "Residential solar project coordination" : "Coordinación de proyectos solares residenciales"} 
+                className="w-full h-full object-cover opacity-80"
+              />
+            </div>
+            <div>
+              <div className="section-tag inline-flex items-center gap-4 text-gold text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-4 before:content-[''] before:w-10 before:h-[1px] before:bg-gold">
+                {language === "en" ? "Project Spotlight" : "Proyecto Destacado"}
+              </div>
+              <h2 className="text-3xl font-black text-white uppercase tracking-tight italic mb-6">
+                {language === "en" ? "Residential Solar Coordination" : "Coordinación Solar Residencial"}
+              </h2>
+              <p className="text-text-muted font-semibold text-sm leading-relaxed mb-6">
+                {language === "en" 
+                  ? "We support residential property owners across Maryland, Virginia, and Washington D.C. in planning, configuring, and coordinating high-efficiency solar panel systems that lock in lower electricity costs."
+                  : "Brindamos soporte a propietarios residenciales en Maryland, Virginia y Washington D.C. en la planificación, configuración y coordinación de sistemas de paneles solares de alta eficiencia para asegurar costos de electricidad más bajos."
+                }
+              </p>
+              <div className="p-4 bg-background/50 border border-white/5 rounded-xl text-xs font-semibold text-text-muted mb-6 leading-relaxed border-l-2 border-gold">
+                {language === "en"
+                  ? "Selected solar project visuals are used to demonstrate the type of clean energy infrastructure Earth Live Invest helps coordinate."
+                  : "Las imágenes de proyectos solares muestran el tipo de infraestructura de energía limpia que Earth Live Invest ayuda a coordinar."
+                }
+              </div>
+              <Link 
+                href="/contacto?service=solar_virtual" 
+                className="inline-flex justify-center items-center gap-3 bg-gold text-background px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] transition-all shadow-[0_4px_16px_rgba(201,168,76,0.2)]"
+              >
+                {t.btn_req}
+                <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Benefits Grid */}
         <section className="mb-24">
           <div className="text-center max-w-2xl mx-auto mb-16">
