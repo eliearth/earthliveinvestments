@@ -1,9 +1,90 @@
+"use client";
+
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Zap, Battery, CheckCircle2, Sun } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Battery, Sun } from "lucide-react";
 import { PortfolioCarousel } from "@/components/home/PortfolioCarousel";
-import { BrandLogo } from "@/components/ui/BrandLogo";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
+  const { language } = useLanguage();
+
+  const translations = {
+    es: {
+      tag_grade: "Institutional Grade Assets",
+      hero_title: <>Acelerando <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold-dim">Riqueza a Través de</span><br /> Energía Limpia.</>,
+      hero_desc: "Earth Live Invest combina infraestructura premium de energía solar con activos estratégicos para ofrecer rendimientos sostenibles a inversores sofisticados.",
+      btn_start: "Iniciar Inversión",
+      btn_performance: "Ver Rendimiento",
+      stat_assets: "Activos Gestionados",
+      stat_yield: "Rendimiento Anual Prom.",
+      real_yield: "Rendimiento Real",
+      tag_dual: "Dual-Asset Strategy",
+      advantage_title: "La Ventaja del Patrimonio",
+      advantage_desc: "Combinamos el flujo de caja constante de la energía renovable con la apreciación de capital de activos inmobiliarios prime.",
+      solar_title: "Infraestructura Solar",
+      solar_desc: "Propiedad estratégica de arreglos solares a gran escala que producen energía limpia constante para redes nacionales.",
+      solar_metric: "Capacidad Instalada",
+      realestate_title: "Inmuebles Premium",
+      realestate_desc: "Propiedades comerciales y residenciales de lujo integradas con sistemas de gestión energética inteligente de vanguardia.",
+      realestate_metric: "Valuación Portafolio",
+      global_title: "Respaldo Global",
+      global_desc: "Diversificación en mercados emergentes y estables, asegurando resiliencia y un alcance global sin precedentes.",
+      global_metric: "Naciones Activas",
+      global_metric_val: "12 Países",
+      platform_tag: "Intelligence Platform",
+      platform_title: <>Total Transparencia <br/> En Tu Bolsillo</>,
+      platform_desc: "Monitorea la producción de energía, rastrea valuaciones inmobiliarias y gestiona tus dividendos con herramientas de grado institucional.",
+      platform_features: [
+        "Monitoreo de producción en tiempo real",
+        "Reportes detallados de impacto ambiental",
+        "Gestión de dividendos trimestrales",
+        "Soporte prioritario 24/7"
+      ],
+      btn_join: "Unirse a la Red",
+      cta_title: <>Patrimonio mediante <br/> <span className="text-gold">precisión energética.</span></>,
+      cta_desc: "El verdadero costo no es la inversión solar; es seguir pagando altas tarifas de por vida. Toma el control hoy.",
+      btn_proposal: "Obtén tu Propuesta Institucional"
+    },
+    en: {
+      tag_grade: "Institutional Grade Assets",
+      hero_title: <>Accelerating <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold-dim">Wealth Through</span><br /> Clean Energy.</>,
+      hero_desc: "Earth Live Invest combines premium solar energy infrastructure with strategic assets to deliver sustainable returns for sophisticated investors.",
+      btn_start: "Start Investing",
+      btn_performance: "View Performance",
+      stat_assets: "Assets Under Management",
+      stat_yield: "Average Annual Yield",
+      real_yield: "Real-time Yield",
+      tag_dual: "Dual-Asset Strategy",
+      advantage_title: "The Wealth Advantage",
+      advantage_desc: "We combine the steady cash flow of renewable energy with the capital appreciation of prime real estate assets.",
+      solar_title: "Solar Infrastructure",
+      solar_desc: "Strategic ownership of utility-scale solar arrays producing constant clean energy for national grids.",
+      solar_metric: "Installed Capacity",
+      realestate_title: "Premium Real Estate",
+      realestate_desc: "Luxury commercial and residential properties integrated with state-of-the-art smart energy management systems.",
+      realestate_metric: "Portfolio Valuation",
+      global_title: "Global Security",
+      global_desc: "Diversification across emerging and stable markets, ensuring resilience and unprecedented global reach.",
+      global_metric: "Active Nations",
+      global_metric_val: "12 Countries",
+      platform_tag: "Intelligence Platform",
+      platform_title: <>Total Transparency <br/> In Your Pocket</>,
+      platform_desc: "Monitor energy production, track real estate valuations, and manage dividends with institutional-grade tools.",
+      platform_features: [
+        "Real-time production monitoring",
+        "Detailed environmental impact reports",
+        "Quarterly dividend management",
+        "Priority 24/7 client support"
+      ],
+      btn_join: "Join the Network",
+      cta_title: <>Wealth through <br/> <span className="text-gold">precision energy.</span></>,
+      cta_desc: "The real cost is not solar investment; it is continuing to pay high utility rates for life. Take control today.",
+      btn_proposal: "Get Your Institutional Proposal"
+    }
+  };
+
+  const t = translations[language];
+
   return (
     <>
       {/* Hero Section */}
@@ -16,17 +97,13 @@ export default function Home() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gold-border bg-gold-glow text-gold-light font-extrabold text-[0.6rem] uppercase tracking-[0.18em] mb-8">
                 <ShieldCheck className="w-4 h-4" />
-                Institutional Grade Assets
+                {t.tag_grade}
               </div>
               <h1 className="text-5xl lg:text-6xl font-black tracking-tighter text-white mb-6 leading-[1.04]">
-                Accelerating <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold-dim">
-                  Wealth Through
-                </span><br />
-                Clean Energy.
+                {t.hero_title}
               </h1>
               <p className="text-base text-text-muted mb-10 max-w-lg leading-relaxed font-semibold">
-                Earth Live Invest combines premium solar energy infrastructure with strategic assets to deliver sustainable returns for sophisticated investors.
+                {t.hero_desc}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -34,26 +111,26 @@ export default function Home() {
                   href="/contacto"
                   className="inline-flex justify-center items-center gap-3 bg-gold text-background px-10 py-4 rounded-xl font-black text-[0.875rem] uppercase tracking-widest hover:scale-[1.02] transition-all shadow-[0_8px_32px_rgba(201,168,76,0.35)]"
                 >
-                  Iniciar Inversión
+                  {t.btn_start}
                   <ArrowRight size={20} />
                 </Link>
                 <Link
                   href="/#performance"
                   className="inline-flex justify-center items-center px-10 py-4 rounded-xl font-black text-[0.875rem] uppercase tracking-widest text-white bg-bg-card border border-white/10 hover:bg-white/5 transition-colors"
                 >
-                  Ver Rendimiento
+                  {t.btn_performance}
                 </Link>
               </div>
 
               <div className="mt-12 flex flex-wrap items-center gap-8 text-[0.7rem] text-text-muted font-bold tracking-widest uppercase">
                 <div className="flex items-center gap-2">
                   <span className="text-gold text-xl font-black tracking-tighter">$2.4B+</span>
-                  <span className="text-[0.6rem] block leading-tight">Activos <br/>Gestionados</span>
+                  <span className="text-[0.6rem] block leading-tight">{language === "en" ? <>Assets<br/>Under Mgmt</> : <>Activos <br/>Gestionados</>}</span>
                 </div>
                 <div className="w-[1px] h-10 bg-white/10" />
                 <div className="flex items-center gap-2">
                   <span className="text-gold text-xl font-black tracking-tighter">12.8%</span>
-                  <span className="text-[0.6rem] block leading-tight">Rendimiento <br/>Anual Prom.</span>
+                  <span className="text-[0.6rem] block leading-tight">{language === "en" ? <>Average<br/>Annual Yield</> : <>Rendimiento <br/>Anual Prom.</>}</span>
                 </div>
               </div>
             </div>
@@ -75,7 +152,7 @@ export default function Home() {
                           <Zap className="w-5 h-5" />
                         </div>
                         <div>
-                          <div className="text-[0.65rem] font-bold text-text-muted uppercase tracking-widest">Rendimiento Real</div>
+                          <div className="text-[0.65rem] font-bold text-text-muted uppercase tracking-widest">{t.real_yield}</div>
                           <div className="text-sm font-bold">Solar Portfolio X-1</div>
                         </div>
                       </div>
@@ -97,10 +174,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <div className="section-tag inline-flex items-center gap-4 text-gold text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-4 before:content-[''] before:w-10 before:h-[1px] before:bg-gold animate-in">
-              Dual-Asset Strategy
+              {t.tag_dual}
             </div>
-            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight">The Wealth Advantage</h2>
-            <p className="text-text-muted text-base leading-relaxed font-semibold">Combinamos el flujo de caja constante de la energía renovable con la apreciación de capital de activos inmobiliarios prime.</p>
+            <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight uppercase">{t.advantage_title}</h2>
+            <p className="text-text-muted text-base leading-relaxed font-semibold">{t.advantage_desc}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -109,10 +186,10 @@ export default function Home() {
               <div className="w-16 h-16 bg-gold-glow border border-gold-border rounded-2xl flex items-center justify-center mb-8 text-gold group-hover:bg-gold group-hover:text-background transition-all">
                 <Sun size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">Infraestructura Solar</h3>
-              <p className="text-text-muted text-sm leading-relaxed font-semibold mb-8">Propiedad estratégica de arreglos solares a gran escala que producen energía limpia constante para redes nacionales.</p>
+              <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">{t.solar_title}</h3>
+              <p className="text-text-muted text-sm leading-relaxed font-semibold mb-8">{t.solar_desc}</p>
               <div className="pt-6 border-t border-white/5 flex justify-between items-center text-[0.65rem] font-bold uppercase tracking-widest">
-                <span className="text-white/40">Capacidad Instalada</span>
+                <span className="text-white/40">{t.solar_metric}</span>
                 <span className="text-gold">1.2 GW</span>
               </div>
             </div>
@@ -122,10 +199,10 @@ export default function Home() {
               <div className="w-16 h-16 bg-gold-glow border border-gold-border rounded-2xl flex items-center justify-center mb-8 text-gold group-hover:bg-gold group-hover:text-background transition-all">
                 <ShieldCheck size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">Inmuebles Premium</h3>
-              <p className="text-text-muted text-sm leading-relaxed font-semibold mb-8">Propiedades comerciales y residenciales de lujo integradas con sistemas de gestión energética inteligente de vanguardia.</p>
+              <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">{t.realestate_title}</h3>
+              <p className="text-text-muted text-sm leading-relaxed font-semibold mb-8">{t.realestate_desc}</p>
               <div className="pt-6 border-t border-white/5 flex justify-between items-center text-[0.65rem] font-bold uppercase tracking-widest">
-                <span className="text-white/40">Valuación Portafolio</span>
+                <span className="text-white/40">{t.realestate_metric}</span>
                 <span className="text-gold">$850M</span>
               </div>
             </div>
@@ -135,18 +212,18 @@ export default function Home() {
               <div className="w-16 h-16 bg-gold-glow border border-gold-border rounded-2xl flex items-center justify-center mb-8 text-gold group-hover:bg-gold group-hover:text-background transition-all">
                 <Battery size={32} />
               </div>
-              <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">Respaldo Global</h3>
-              <p className="text-text-muted text-sm leading-relaxed font-semibold mb-8">Diversificación en mercados emergentes y estables, asegurando resiliencia y un alcance global sin precedentes.</p>
+              <h3 className="text-xl font-bold mb-4 tracking-tight uppercase">{t.global_title}</h3>
+              <p className="text-text-muted text-sm leading-relaxed font-semibold mb-8">{t.global_desc}</p>
               <div className="pt-6 border-t border-white/5 flex justify-between items-center text-[0.65rem] font-bold uppercase tracking-widest">
-                <span className="text-white/40">Naciones Activas</span>
-                <span className="text-gold">12 Países</span>
+                <span className="text-white/40">{t.global_metric}</span>
+                <span className="text-gold">{t.global_metric_val}</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Portfolio Section with Updated Carousel Styling */}
+      {/* Portfolio Section */}
       <section id="portafolio" className="py-28 px-6 sm:px-12">
         <PortfolioCarousel />
       </section>
@@ -200,17 +277,12 @@ export default function Home() {
 
           <div className="order-1 lg:order-2">
             <div className="section-tag inline-flex items-center gap-4 text-gold text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-4 before:content-[''] before:w-10 before:h-[1px] before:bg-gold animate-in">
-              Intelligence Platform
+              {t.platform_tag}
             </div>
-            <h2 className="text-4xl font-black mb-6 tracking-tight leading-tight uppercase">Total Transparency <br/> In Your Pocket</h2>
-            <p className="text-text-muted text-base leading-relaxed font-semibold mb-10">Monitorea la producción de energía, rastrea valuaciones inmobiliarias y gestiona tus dividendos con herramientas de grado institucional.</p>
+            <h2 className="text-4xl font-black mb-6 tracking-tight leading-tight uppercase">{t.platform_title}</h2>
+            <p className="text-text-muted text-base leading-relaxed font-semibold mb-10">{t.platform_desc}</p>
             <div className="space-y-6 mb-12">
-              {[
-                "Monitoreo de producción en tiempo real",
-                "Reportes detallados de impacto ambiental",
-                "Gestión de dividendos trimestrales",
-                "Soporte prioritario 24/7"
-              ].map((item, i) => (
+              {t.platform_features.map((item, i) => (
                 <div key={i} className="flex items-center gap-4 group">
                   <div className="w-6 h-6 rounded-full border border-gold-border flex items-center justify-center text-[0.6rem] font-bold text-gold group-hover:bg-gold group-hover:text-background transition-colors">
                     {i + 1}
@@ -223,7 +295,7 @@ export default function Home() {
               href="/contacto"
               className="inline-flex justify-center items-center gap-3 bg-gold text-background px-10 py-5 rounded-full font-black text-[0.875rem] uppercase tracking-widest hover:scale-[1.02] transition-all shadow-2xl shadow-gold/25"
             >
-              Unirse a la Red
+              {t.btn_join}
               <ArrowRight size={20} />
             </Link>
           </div>
@@ -237,17 +309,16 @@ export default function Home() {
         
         <div className="max-w-4xl mx-auto relative">
           <h2 className="text-4xl lg:text-6xl font-black text-white mb-8 tracking-tighter uppercase leading-tight italic">
-            Wealth through <br/>
-            <span className="text-gold">precision energy.</span>
+            {t.cta_title}
           </h2>
           <p className="text-xl text-text-muted mb-12 max-w-2xl mx-auto font-semibold leading-relaxed">
-            El verdadero costo no es la inversión solar; es seguir pagando altas tarifas de por vida. Toma el control hoy.
+            {t.cta_desc}
           </p>
           <Link
             href="/contacto"
             className="inline-flex justify-center items-center bg-gold text-background px-12 py-5 rounded-full font-black text-[1rem] uppercase tracking-[0.15em] hover:scale-105 transition-all shadow-[0_0_50px_rgba(201,168,76,0.3)]"
           >
-            Obtén tu Propuesta Institucional
+            {t.btn_proposal}
           </Link>
         </div>
       </section>

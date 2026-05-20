@@ -3,19 +3,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const SLIDES = [
-  { id: 1, src: "/projects/project-1.jpg", title: "Instalación Residencial" },
-  { id: 2, src: "/projects/project-2.jpg", title: "Sistema Industrial" },
-  { id: 3, src: "/projects/project-3.jpg", title: "Infraestructura Solar" },
-  { id: 4, src: "/projects/project-4.jpg", title: "Gestión Energética" },
-  { id: 5, src: "/projects/project-5.jpg", title: "Pliegues Solares" },
-  { id: 6, src: "/projects/project-6.jpg", title: "Proyecto Corporativo" },
-  { id: 7, src: "/projects/project-7.jpg", title: "Instalación Premium" },
-  { id: 8, src: "/projects/project-8.jpg", title: "Sistema de Respaldo" }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export function PortfolioCarousel() {
+  const { language } = useLanguage();
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -31,20 +22,54 @@ export function PortfolioCarousel() {
 
   useEffect(() => {
     if (!emblaApi) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     onSelect();
     emblaApi.on('select', onSelect);
     emblaApi.on('reInit', onSelect);
   }, [emblaApi, onSelect]);
+
+  const translations = {
+    es: {
+      tag: "Nuestro Portafolio",
+      desc: "Explora nuestras instalaciones más recientes en El Salvador, demostrando nuestra capacidad técnica y atención al detalle en activos de alto rendimiento.",
+      slides: [
+        { id: 1, src: "/projects/project-1.jpg", title: "Instalación Residencial" },
+        { id: 2, src: "/projects/project-2.jpg", title: "Sistema Industrial" },
+        { id: 3, src: "/projects/project-3.jpg", title: "Infraestructura Solar" },
+        { id: 4, src: "/projects/project-4.jpg", title: "Gestión Energética" },
+        { id: 5, src: "/projects/project-5.jpg", title: "Pliegues Solares" },
+        { id: 6, src: "/projects/project-6.jpg", title: "Proyecto Corporativo" },
+        { id: 7, src: "/projects/project-7.jpg", title: "Instalación Premium" },
+        { id: 8, src: "/projects/project-8.jpg", title: "Sistema de Respaldo" }
+      ]
+    },
+    en: {
+      tag: "Our Portfolio",
+      desc: "Explore our recent premium solar installations in El Salvador, proving our technical capacity and asset performance detail.",
+      slides: [
+        { id: 1, src: "/projects/project-1.jpg", title: "Residential Setup" },
+        { id: 2, src: "/projects/project-2.jpg", title: "Industrial System" },
+        { id: 3, src: "/projects/project-3.jpg", title: "Solar Infrastructure" },
+        { id: 4, src: "/projects/project-4.jpg", title: "Energy Management" },
+        { id: 5, src: "/projects/project-5.jpg", title: "Solar Arrays" },
+        { id: 6, src: "/projects/project-6.jpg", title: "Corporate Project" },
+        { id: 7, src: "/projects/project-7.jpg", title: "Premium Installation" },
+        { id: 8, src: "/projects/project-8.jpg", title: "Backup Energy Storage" }
+      ]
+    }
+  };
+
+  const t = translations[language];
 
   return (
     <div className="relative max-w-7xl mx-auto py-12">
       <div className="flex justify-between items-end mb-12">
         <div>
           <div className="section-tag inline-flex items-center gap-4 text-gold text-[0.6rem] font-bold tracking-[0.2em] uppercase mb-4 before:content-[''] before:w-10 before:h-[1px] before:bg-gold">
-            Nuestro Portafolio
+            {t.tag}
           </div>
           <h2 className="text-3xl md:text-5xl font-black tracking-tighter uppercase mb-4">Investment Spotlight</h2>
-          <p className="text-text-muted max-w-2xl text-sm font-semibold leading-relaxed">Explora nuestras instalaciones más recientes en El Salvador, demostrando nuestra capacidad técnica y atención al detalle en activos de alto rendimiento.</p>
+          <p className="text-text-muted max-w-2xl text-sm font-semibold leading-relaxed">{t.desc}</p>
         </div>
         <div className="hidden md:flex gap-3">
           <button onClick={scrollPrev} disabled={!canScrollPrev} className="p-4 rounded-full border border-gold-border bg-gold-glow text-gold hover:bg-gold hover:text-background transition-all disabled:opacity-20 shadow-xl">
@@ -58,7 +83,7 @@ export function PortfolioCarousel() {
 
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex -ml-6">
-          {SLIDES.map((slide) => (
+          {t.slides.map((slide) => (
             <div key={slide.id} className="flex-[0_0_100%] sm:flex-[0_0_50%] lg:flex-[0_0_40%] pl-6">
               <div className="relative h-[500px] rounded-[2rem] overflow-hidden group border border-white/5 hover:border-gold-border transition-all">
                 <img 
