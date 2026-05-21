@@ -33,6 +33,21 @@ type PortfolioItem = {
 
 const portfolioItems: PortfolioItem[] = [
   {
+    id: "commercial-solar-latam",
+    category: { en: "Solar Infrastructure", es: "Infraestructura Solar" },
+    image: "/portfolio/earth-live-solar-commercial-latam.webp",
+    title: { en: "Commercial Solar (LATAM)", es: "Solar Comercial (LATAM)" },
+    caption: {
+      en: "Utility and commercial-scale solar project coordination in El Salvador.",
+      es: "Coordinación de proyectos solares a escala comercial y de servicios públicos en El Salvador."
+    },
+    alt: {
+      en: "Commercial solar panel array installation on a metal roof in El Salvador",
+      es: "Instalación de paneles solares a escala comercial en un techo de metal en El Salvador"
+    },
+    serviceArea: { en: "El Salvador & LATAM", es: "El Salvador y LATAM" }
+  },
+  {
     id: "residential-solar-dmv",
     category: { en: "Solar Energy", es: "Energía Solar" },
     image: "/portfolio/earth-live-solar-residential-dmv.webp",
@@ -222,11 +237,14 @@ export function PortfolioCarousel() {
                         {language === "en" ? "Service Area" : "Área de Servicio"}
                       </div>
                       <div className="text-sm font-black text-gold uppercase">
-                        {slide.id.includes("solar") && !slide.id.includes("dmv") ? "Virtual Consultation" : "DMV Regional"}
+                        {slide.id === "commercial-solar-latam" ? (language === "en" ? "LATAM Project" : "Proyecto LATAM") :
+                         slide.id.includes("solar") && !slide.id.includes("dmv") ? (language === "en" ? "Virtual Consultation" : "Asesoría Virtual") :
+                         (language === "en" ? "DMV Regional" : "Regional DMV")}
                       </div>
                     </div>
                     <Link 
                       href={`/contacto?service=${
+                        slide.id === "commercial-solar-latam" ? "commercial_solar" :
                         slide.id.includes("solar") ? "solar_virtual" : "roofing_md"
                       }`}
                       className="w-12 h-12 rounded-full bg-gold text-background flex items-center justify-center font-light text-2xl group-hover:scale-110 transition-transform shadow-lg"

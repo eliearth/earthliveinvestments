@@ -431,6 +431,49 @@ export function SolarClient() {
                 </div>
               </div>
             ))}
+
+            {/* Visual Showcase Gallery */}
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="relative h-60 rounded-2xl overflow-hidden border border-white/5 hover:border-gold-border/60 transition-all duration-300 group">
+                <img 
+                  src="/portfolio/earth-live-solar-latam-roof.webp" 
+                  alt={language === "en" ? "Commercial solar installation in El Salvador" : "Instalación solar comercial en El Salvador"} 
+                  className="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent p-4 flex flex-col justify-end">
+                  <span className="text-[0.6rem] font-black text-gold uppercase tracking-wider">
+                    {language === "en" ? "Rooftop Array" : "Arreglo en Techo"}
+                  </span>
+                  <span className="text-[0.5rem] text-white/50 uppercase tracking-widest">El Salvador</span>
+                </div>
+              </div>
+              <div className="relative h-60 rounded-2xl overflow-hidden border border-white/5 hover:border-gold-border/60 transition-all duration-300 group">
+                <img 
+                  src="/portfolio/earth-live-solar-latam-inverter.webp" 
+                  alt={language === "en" ? "Premium inverter and grid integration" : "Integración de inversor y red premium"} 
+                  className="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent p-4 flex flex-col justify-end">
+                  <span className="text-[0.6rem] font-black text-gold uppercase tracking-wider">
+                    {language === "en" ? "Inverter & Grid" : "Inversor y Red"}
+                  </span>
+                  <span className="text-[0.5rem] text-white/50 uppercase tracking-widest">El Salvador</span>
+                </div>
+              </div>
+              <div className="relative h-60 rounded-2xl overflow-hidden border border-white/5 hover:border-gold-border/60 transition-all duration-300 group">
+                <img 
+                  src="/portfolio/earth-live-solar-latam-scenery.webp" 
+                  alt={language === "en" ? "Large scale agricultural solar" : "Solar agrícola a gran escala"} 
+                  className="w-full h-full object-cover opacity-75 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent p-4 flex flex-col justify-end">
+                  <span className="text-[0.6rem] font-black text-gold uppercase tracking-wider">
+                    {language === "en" ? "Agricultural & Utility" : "Escala Agrícola y de Utilidad"}
+                  </span>
+                  <span className="text-[0.5rem] text-white/50 uppercase tracking-widest">El Salvador</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -439,8 +482,8 @@ export function SolarClient() {
           <div className="grid lg:grid-cols-2 gap-12 items-center bg-bg-card border border-white/5 rounded-[2.5rem] overflow-hidden p-8 sm:p-12">
             <div className="relative rounded-[2rem] overflow-hidden border border-white/10 aspect-video lg:aspect-auto lg:h-[400px]">
               <img 
-                src="/portfolio/earth-live-solar-residential-dmv.webp" 
-                alt={language === "en" ? "Residential solar project coordination" : "Coordinación de proyectos solares residenciales"} 
+                src="/portfolio/earth-live-solar-commercial-latam.webp" 
+                alt={language === "en" ? "Commercial solar project installation in El Salvador" : "Instalación de proyecto solar comercial en El Salvador"} 
                 className="w-full h-full object-cover opacity-80"
               />
             </div>
@@ -449,22 +492,22 @@ export function SolarClient() {
                 {language === "en" ? "Project Spotlight" : "Proyecto Destacado"}
               </div>
               <h2 className="text-3xl font-black text-white uppercase tracking-tight italic mb-6">
-                {language === "en" ? "Residential Solar Coordination" : "Coordinación Solar Residencial"}
+                {language === "en" ? "El Salvador Solar Infrastructure" : "Infraestructura Solar en El Salvador"}
               </h2>
               <p className="text-text-muted font-semibold text-sm leading-relaxed mb-6">
                 {language === "en" 
-                  ? "We support residential property owners across Maryland, Virginia, and Washington D.C. in planning, configuring, and coordinating high-efficiency solar panel systems that lock in lower electricity costs."
-                  : "Brindamos soporte a propietarios residenciales en Maryland, Virginia y Washington D.C. en la planificación, configuración y coordinación de sistemas de paneles solares de alta eficiencia para asegurar costos de electricidad más bajos."
+                  ? "We coordinate utility and commercial-scale solar installations in El Salvador, enabling energy self-generation and long-term cost predictability for agricultural, industrial, and commercial operations."
+                  : "Coordinamos instalaciones solares a escala comercial y de servicios públicos en El Salvador, facilitando la autogeneración de energía y la previsibilidad de costos a largo plazo para operaciones agrícolas, industriales y comerciales."
                 }
               </p>
               <div className="p-4 bg-background/50 border border-white/5 rounded-xl text-xs font-semibold text-text-muted mb-6 leading-relaxed border-l-2 border-gold">
                 {language === "en"
-                  ? "Selected solar project visuals are used to demonstrate the type of clean energy infrastructure Earth Live Invest helps coordinate."
-                  : "Las imágenes de proyectos solares muestran el tipo de infraestructura de energía limpia que Earth Live Invest ayuda a coordinar."
+                  ? "Real-world project photos from our installations in El Salvador, LATAM."
+                  : "Fotos de proyectos reales de nuestras instalaciones en El Salvador, LATAM."
                 }
               </div>
               <Link 
-                href="/contacto?service=solar_virtual" 
+                href="/contacto?service=commercial_solar" 
                 className="inline-flex justify-center items-center gap-3 bg-gold text-background px-6 py-3 rounded-xl font-black text-xs uppercase tracking-widest hover:scale-[1.02] transition-all shadow-[0_4px_16px_rgba(201,168,76,0.2)]"
               >
                 {t.btn_req}
